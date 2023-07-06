@@ -28,17 +28,18 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        
+
         $schedule->command('deal:stagnation')->twiceDaily(10, 14);
         // $schedule->command('deal:stagnation')->everyTwoMinutes();
         // $schedule->command('deal:stagnation')->dailyAt('08:55');        
         $schedule->command('database:backup')->twiceDaily(4, 17);
-        // $schedule->command('database:backup')->dailyAt('23:00');        
-        $schedule->command('user:profilestatus')->monthlyOn(1,'15:00');
+        // $schedule->command('database:backup')->dailyAt('23:00');   
+             
+        // $schedule->command('user:profilestatus')->monthlyOn(1,'15:00');
 
         $schedule->command('manager:monthly')->monthlyOn(1, '16:00');
-       
-        $schedule->command('dailyTask:update')->days([1,3,5])->at('16:30');
+
+        // $schedule->command('dailyTask:update')->days([1,3,5])->at('16:30');
 
         // $schedule->command('dailyTask:update')->dailyAt('14:26');
 
